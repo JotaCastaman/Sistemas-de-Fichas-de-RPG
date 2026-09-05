@@ -1,13 +1,13 @@
 import { banco } from "../db/conexao.ts";
-//import { Atributo, Pericia, Personagem, AtributoDoPersonagem, PericiaDoPersonagem } from "../interfaces/personagens.ts";
+import type { Personagem } from "../interfaces/personagens.ts";
 
-function criarPersonagem(
+export function criarPersonagem(
   nome: string,
   especie: string,
   classe: string,
   atributos: { atributoId: number; valor: number }[],
   pericias: { periciaId: number; valor: number }[],
-) {
+):Personagem {
   // personagem
   const inserirPersonagem = banco.prepare(
     "INSERT INTO personagens (nome, especie, classe) VALUES (?, ?, ?)",
@@ -57,4 +57,13 @@ function criarPersonagem(
     };
     listaPericia.push({ nome: nomePericia.nome, valor: pericia.valor });
   }
+
+  return {
+    id: Number(idPersonagem),
+    nome: nome,
+    especie: especie,
+    classe: classe,
+    atributos: listaAtributo,
+    pericias: listaPericia,
+  };
 }
