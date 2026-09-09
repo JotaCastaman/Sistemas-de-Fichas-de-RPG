@@ -1,6 +1,5 @@
-// Visite https://aka.ms/tsconfig para saber mais sobre este arquivo
 {
-  "compilerOptions": {
+  "compilerOptions": {    
     // Estrutura de arquivos
     // "rootDir": "./src",
     "outDir": "./dist",

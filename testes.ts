@@ -1,6 +1,7 @@
 import { buscarPersonagem } from "./src/repositorio/buscar_personagem.ts";
 import { criarPersonagem } from "./src/repositorio/criar_personagem.ts";
 import { listarPersonagens } from "./src/repositorio/listar_personagens.ts";
+import { realizarAtaque, imprimirResultadoAtaque } from "./src/logica/combate.ts";
 
 const teste = criarPersonagem('Aragorn', 'humano', 'guerreiro',
     [
@@ -34,3 +35,12 @@ console.log(personagemBuscado);
 
 const todosPersonagens = listarPersonagens();
 console.log(todosPersonagens);
+
+// teste rápido de combate entre os dois primeiros personagens cadastrados,
+// se já existirem pelo menos 2 no banco
+if (todosPersonagens.length >= 2) {
+  const atacante = buscarPersonagem(todosPersonagens[0].id);
+  const alvo = buscarPersonagem(todosPersonagens[1].id);
+  const resultadoAtaque = realizarAtaque(atacante, alvo);
+  imprimirResultadoAtaque(resultadoAtaque);
+}

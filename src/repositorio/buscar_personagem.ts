@@ -27,11 +27,13 @@ export function buscarPersonagem(idPersonagem: number): Personagem {
     valor: number;
   }[];
 
-  const dadosDoPersonagem = selectPersonagem.get(idPersonagem) as {
-    nome: string;
-    especie: string;
-    classe: string;
-  };
+  const dadosDoPersonagem = selectPersonagem.get(idPersonagem) as
+    | { nome: string; especie: string; classe: string }
+    | undefined;
+
+  if (!dadosDoPersonagem) {
+    throw new Error(`Personagem com id ${idPersonagem} não encontrado.`);
+  }
 
   return {
     id: idPersonagem,

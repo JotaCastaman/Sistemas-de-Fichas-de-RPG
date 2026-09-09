@@ -1,6 +1,6 @@
 import { banco } from "./conexao.ts";
 
-banco.exec(`INSERT OR IGNORE INTO atributos ( nome ) VALUES
+banco.exec(`INSERT OR IGNORE INTO Atributos ( nome ) VALUES
     ('Força'),
     ('Destreza'),
     ('Constituição'),
@@ -9,7 +9,7 @@ banco.exec(`INSERT OR IGNORE INTO atributos ( nome ) VALUES
     ('Carisma');
     `);
 
-banco.exec(`INSERT OR IGNORE INTO pericias ( nome, atributo_id ) VALUES
+banco.exec(`INSERT OR IGNORE INTO Perícias ( nome, atributo_id ) VALUES
     ('Atletismo', 1),
     ('Luta', 1),
     ('Furtividade', 2),
