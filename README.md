@@ -39,7 +39,7 @@ Tudo isso rodando direto no terminal, sem interface gráfica.
 
 ```bash
 git clone <url-do-repositorio>
-cd rpg-projeto
+cd Sistemas-de-Fichas-de-RPG
 npm install
 ```
 
@@ -116,7 +116,7 @@ npx tsx index.ts atacar 1 2 Luta
 ## Estrutura do projeto
 
 ```
-rpg-projeto/
+Sistemas-de-Fichas-de-RPG/
 ├── assets/                  # imagens/ícones
 ├── src/
 │   ├── cli/
