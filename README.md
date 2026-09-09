@@ -135,7 +135,7 @@ Sistemas-de-Fichas-de-RPG/
 │       ├── buscar_personagem.ts
 │       └── listar_personagens.ts
 ├── index.ts                 # ponto de entrada da CLI
-├── banco.db                 # banco SQLite (gerado localmente, ignorado no git)
+├── banco.db                 
 └── package.json
 ```
 
